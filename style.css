@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+.flag {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-reflect: below 15px
+    lineargradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+.flag::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-left: 100px solid green;
+  border-right: 100px solid green;
+  box-sizing: border-box;
+  filter: url(#wavy);
+}
+
+.flag::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  filter: url(#wavy);
+}
+
+svg {
+  width: 0;
+  height: 0;
+}
+
+.anthem {
+  font-family: "Poppins", sans-serif;
+  display: flexbox;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+
+p::before {
+  content: "";
+  position: absolute;
+  left: 120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+  animation: animate 30s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    left: -20%;
+  }
+  50% {
+    left: 120%;
+  }
+  100% {
+    left: -20%;
+  }
+}
